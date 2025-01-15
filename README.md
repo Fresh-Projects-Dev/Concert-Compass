@@ -1,84 +1,108 @@
-# Turborepo starter
+# Concert Compass
 
-This is an official starter Turborepo.
+Concert Compass is an app for discovering and purchasing concert tickets, and connecting with others attending the same event.
 
-## Using this example
+--- 
+## Monorepo Overview
 
-Run the following command:
+This monorepo hosts all the applications and packages for **Concert Compass**, designed with scalability, maintainability, and ease of collaboration in mind.
 
-```sh
-npx create-turbo@latest
+## Apps and Packages
+
+#### **Apps**
+
+- **`web`**: A [Next.js](https://nextjs.org/) app for the web platform.
+- **`mobile`**: An [Expo](https://expo.dev/) app for mobile devices (iOS and Android).
+- **`api`**: An [Express.js](https://expressjs.com/) app for the backend API.
+
+#### **Packages**
+
+- **`@repo/eslint-config`**: Shared ESLint configurations, including support for `eslint-config-next` and `eslint-config-prettier`.
+- **`@repo/typescript-config`**: Shared TypeScript configurations (`tsconfig.json`) used across all apps and packages.
+
+---
+
+## Tech Stack
+
+### **Frontend**
+
+- **Next.js**: For the web app.
+- **Expo**: For the mobile app.
+- **React**: Core library for UI development.
+- **TypeScript**: Strict type checking for all apps and packages.
+
+### **Backend**
+
+- **Express.js**: Lightweight and flexible backend framework.
+- **Prisma**: ORM for PostgreSQL database interactions.
+- **PostgreSQL**: Reliable relational database.
+
+### **Tooling**
+
+- **Turborepo**: Efficient monorepo management.
+- **Docker**: Optional containerization for development and deployment.
+- **ESLint & Prettier**: Linting and formatting.
+
+---
+
+## **Prerequisites**
+
+- **Node.js**: >=18
+- **Yarn**: >=1.22
+- **PostgreSQL**: Ensure a local or Dockerized PostgreSQL instance is running.
+
+yarn install
+```
+3. Start all apps
+```bash
+yarn dev
+```
+## Folder Structure
+```bash
+root/
+├── apps/
+│   ├── web/    # Next.js web app
+│   ├── mobile/ # Expo mobile app
+│   └── api/    # Express.js backend
+├── packages/
+│   ├── eslint-config/    # Shared ESLint configuration
+│   ├── typescript-config/ # Shared TypeScript configuration
+├── README.md             # Project documentation
+|── etc. (config files)
 ```
 
-## What's inside?
+## Branching Strategy
+We use a two-branch strategy for managing the project:
 
-This Turborepo includes the following packages/apps:
+`main`: The production-ready branch. This contains stable code that is deployed to production.
 
-### Apps and Packages
+`dev`: The development branch. This is where all new features and bug fixes are merged after testing.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+## How to Contribute
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+1. **Fork the Repository:** Create your own copy of the repo.
 
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+2. **Clone the Fork:** Clone your forked repository to your local machine:
+```bash
+    git clone https://github.com/your-username/concert-compass.git
+    cd concert-compass
+```
+3. **Create a Feature Branch:** Work off the dev branch:
+```bash
+    git checkout -b feature
 
 ```
-cd my-turborepo
-pnpm build
+4.  **Make Your Changes:** Ensure your code adheres to the linting and formatting rules.
+
+5. **Commit Your Changes:** Write clear and descriptive commit messages:
+```bash
+    git commit -m "Add your feature description"
 ```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
+6. **Push Your Branch:** Push your feature branch to your forked repository:
+```bash
+git push origin feature/your-feature-name
 ```
-cd my-turborepo
-pnpm dev
-```
+7. **Open a Pull Request:** Submit your changes against the dev branch.
 
-### Remote Caching
+8. **Address Feedback:** Make any requested changes during the review process.
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
