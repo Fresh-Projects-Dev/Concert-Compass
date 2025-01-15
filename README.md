@@ -51,12 +51,6 @@ This monorepo hosts all the applications and packages for **Concert Compass**, d
 - **Yarn**: >=1.22
 - **PostgreSQL**: Ensure a local or Dockerized PostgreSQL instance is running.
 
-yarn install
-```
-3. Start all apps
-```bash
-yarn dev
-```
 ## Folder Structure
 ```bash
 root/
