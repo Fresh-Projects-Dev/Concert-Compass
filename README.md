@@ -49,7 +49,6 @@ This monorepo hosts all the applications and packages for **Concert Compass**, d
 
 - **Node.js**: >=18
 - **Yarn**: >=1.22
-- **PostgreSQL**: Ensure a local or Dockerized PostgreSQL instance is running.
 
 ## Folder Structure
 ```bash
@@ -70,7 +69,7 @@ We use a two-branch strategy for managing the project:
 
 `main`: The production-ready branch. This contains stable code that is deployed to production.
 
-`dev`: The development branch. This is where all new features and bug fixes are merged after testing.
+`dev`: The development branch. This is where all new features and bug fixes are merged and tested once approved, it will be pushed to the main branch.
 
 ## How to Contribute
 
